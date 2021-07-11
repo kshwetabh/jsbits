@@ -163,6 +163,8 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/kshwetabh/images/button-home-close-all.svg</li>
+
 <li>$:/palette</li>
 
 <li>$:/plugins/nico/notebook-mobile</li>
@@ -173,6 +175,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/advancedsearch/currentTab</li>
+
 <li>$:/state/notebook-sidebar</li>
 
 <li>$:/state/notebook-sidebar-section</li>
@@ -180,6 +184,8 @@ Error message and password prompt
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab--1963855381</li>
 
@@ -220,6 +226,8 @@ Error message and password prompt
 <li>Combine Arrays using destructuring</li>
 
 <li>Custom CSS Styles</li>
+
+<li>CustomHomeBtn</li>
 
 <li>Freeze an object (making it immutable)</li>
 
@@ -262,8 +270,8 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210710142811002" modified="20210710142811002" title="$:/config/NewJournal/Tags">
 <pre></pre>
 </div>
-<div created="20210711062120709" modified="20210711062120709" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/close-all">
-<pre>show</pre>
+<div created="20210711062120709" modified="20210711151305208" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/close-all">
+<pre>hide</pre>
 </div>
 <div created="20210711062119794" modified="20210711062119794" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
@@ -10146,6 +10154,9 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
+<div created="20210711150248851" modified="20210711150847391" tags="" title="$:/kshwetabh/images/button-home-close-all.svg">
+<pre>&lt;svg width=&quot;22pt&quot; height=&quot;22pt&quot; class=&quot;tc-image-home-button tc-image-button&quot; viewBox=&quot;0 0 128 128&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M112.985 119.502c.01-.165.015-.331.015-.499V67.568c3.137 2.948 8.076 2.884 11.134-.174a7.999 7.999 0 00-.002-11.316L70.396 2.343A7.978 7.978 0 0064.734 0a7.957 7.957 0 00-5.656 2.343L33 28.42V8.007C33 3.585 29.41 0 25 0c-4.418 0-8 3.59-8 8.007V44.42L5.342 56.078c-3.125 3.125-3.12 8.198-.002 11.316a7.999 7.999 0 0011.316-.003l.344-.343v52.945a8.11 8.11 0 000 .007c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8a8.11 8.11 0 00-.015-.498zM97 112V51.574L64.737 19.31 33 51.048V112h64z&quot;/&gt;&lt;/svg&gt;</pre>
+</div>
 <div created="20210710132616964" modified="20210711143658351" title="$:/palette">
 <pre>$:/themes/nico/notebook/palettes/palette-dark</pre>
 </div>
@@ -10240,17 +10251,23 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210710132040738" modified="20210710132045004" title="$:/SiteTitle">
 <pre>JSBits</pre>
 </div>
-<div created="20210711140720392" modified="20210711144100854" title="$:/state/notebook-sidebar">
-<pre>no</pre>
+<div created="20210711150750542" modified="20210711150751184" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20210711140722135" modified="20210711144018640" title="$:/state/notebook-sidebar-section">
-<pre>Home</pre>
+<div created="20210711140720392" modified="20210711145534408" title="$:/state/notebook-sidebar">
+<pre>yes</pre>
 </div>
-<div created="20210710132402566" modified="20210711143919239" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210711140722135" modified="20210711151307943" title="$:/state/notebook-sidebar-section">
+<pre></pre>
+</div>
+<div created="20210710132402566" modified="20210711150520639" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210710133211564" modified="20210711124919222" title="$:/state/sidebar">
 <pre>yes</pre>
+</div>
+<div created="20210711150750543" modified="20210711150751185" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210710132614216" modified="20210711142152816" title="$:/state/tab--1963855381">
 <pre>$:/themes/nico/notebook/themetweaks</pre>
@@ -10267,7 +10284,7 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210711142546098" list="$:/ControlPanel HomeTOCTemplate [[Custom CSS Styles]] Home" modified="20210711144350106" title="$:/StoryList">
+<div created="20210711151218190" list="Home" modified="20210711151255290" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711140657557" modified="20210711140657557" title="$:/theme">
@@ -10775,6 +10792,14 @@ console.log(combined);
 }
 
 }
+</pre>
+</div>
+<div created="20210711145235082" list-before="$:/core/ui/" modified="20210711151243808" tags="" title="CustomHomeBtn">
+<pre>&lt;$button title=&quot;Home&quot; class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-home&quot;/&gt;{{$:/kshwetabh/images/button-home-close-all.svg}}&lt;/$button&gt;
+
+Use this tag to add it to the PageControl (top toolbar)
+$:/tags/PageControls
 </pre>
 </div>
 <div created="20210711130126215" modified="20210711130454207" tags="Home" title="Freeze an object (making it immutable)">
