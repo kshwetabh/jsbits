@@ -10146,8 +10146,8 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210710132616964" modified="20210711142524320" title="$:/palette">
-<pre>$:/themes/nico/notebook/palettes/palette-grey</pre>
+<div created="20210710132616964" modified="20210711143658351" title="$:/palette">
+<pre>$:/themes/nico/notebook/palettes/palette-dark</pre>
 </div>
 <div author="NicolasPetton" bag="default" core-version="&gt;=5.1.22" dependents="" description="JavaScript hooks for mobile devices support of the Notebook theme" list="" name="Mobile support for the Notebook theme" plugin-type="plugin" revision="0" source="https://github.com/NicolasPetton/Notebook" title="$:/plugins/nico/notebook-mobile" type="application/json" version="1.0.0">
 <pre>{
@@ -10240,14 +10240,14 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210710132040738" modified="20210710132045004" title="$:/SiteTitle">
 <pre>JSBits</pre>
 </div>
-<div created="20210711140720392" modified="20210711142443736" title="$:/state/notebook-sidebar">
-<pre>no</pre>
-</div>
-<div created="20210711140722135" modified="20210711142435098" title="$:/state/notebook-sidebar-section">
-<pre></pre>
-</div>
-<div created="20210710132402566" modified="20210710132402566" title="$:/state/showeditpreview">
+<div created="20210711140720392" modified="20210711144017091" title="$:/state/notebook-sidebar">
 <pre>yes</pre>
+</div>
+<div created="20210711140722135" modified="20210711144018640" title="$:/state/notebook-sidebar-section">
+<pre>Home</pre>
+</div>
+<div created="20210710132402566" modified="20210711143919239" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210710133211564" modified="20210711124919222" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -10267,7 +10267,7 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210711142546098" list="Home [[Parse CSS Text in JavaScript]]" modified="20210711143134419" title="$:/StoryList">
+<div created="20210711142546098" list="HomeTOCTemplate [[Custom CSS Styles]] Home" modified="20210711143800539" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711140657557" modified="20210711140657557" title="$:/theme">
@@ -10757,14 +10757,25 @@ console.log(combined);
 
 // Array(10) [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]</pre>
 </div>
-<div created="20210711141118551" modified="20210711141708137" tags="$:/tags/Stylesheet" title="Custom CSS Styles">
-<pre>@media (max-width: 360px) {
+<div created="20210711141118551" modified="20210711144001469" tags="$:/tags/Stylesheet" title="Custom CSS Styles">
+<pre>.toc-item-template-date {
+    color: #777;
+    font-size: .9rem;
+    line-height: 40px;
+}
+
+@media (max-width: 360px) {
 
 .hide-tags-on-mobile {
    display: none;
 }
 
-}</pre>
+.toc-item-template-date {
+    line-height: unset;
+}
+
+}
+</pre>
 </div>
 <div created="20210711130126215" modified="20210711130454207" tags="Home" title="Freeze an object (making it immutable)">
 <pre>```javascript
@@ -10797,8 +10808,8 @@ Reference: [[MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 <pre>&lt;&lt;list-tagged-draggable tag:&quot;Home&quot; subFilter:&quot;!has[draft.of]tag[Home]!sort[created]&quot; itemTemplate:&quot;HomeTOCTemplate&quot; emptyMessage:&quot;You don't have any active snippets.&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20210711063641945" modified="20210711142606146" tags="" title="HomeTOCTemplate">
-<pre>&lt;$link/&gt;&lt;span style=&quot;color:#777;font-size:.9rem;line-height:40px;&quot;&gt; - &lt;$view field=&quot;created&quot; format=&quot;date&quot; template=&quot;DDth mmm hh:mm&quot;/&gt; &lt;$transclude tiddler=&quot;$:/.tb/template/list-tags&quot; mode=inline/&gt;&lt;/span&gt;</pre>
+<div created="20210711063641945" modified="20210711144004092" tags="" title="HomeTOCTemplate">
+<pre>&lt;$link/&gt;&lt;span class=&quot;toc-item-template-date&quot; &gt; - &lt;$view field=&quot;created&quot; format=&quot;date&quot; template=&quot;DDth mmm hh:mm&quot;/&gt; &lt;$transclude tiddler=&quot;$:/.tb/template/list-tags&quot; mode=inline/&gt;&lt;/span&gt;</pre>
 </div>
 <div created="20210711084954139" modified="20210711143321809" tags="Home" title="Parse CSS Text in JavaScript">
 <pre>Suppose you get the `CSS` as a text (eg. from the database) and you need to parse it on the UI and allow users to modify it (customizing CSS styles), here's an easy way to do that.
