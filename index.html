@@ -10271,7 +10271,7 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210711140722135" modified="20210712152022773" title="$:/state/notebook-sidebar-section">
 <pre></pre>
 </div>
-<div created="20210710132402566" modified="20210712151945454" title="$:/state/showeditpreview">
+<div created="20210710132402566" modified="20210713021539731" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210710133211564" modified="20210711124919222" title="$:/state/sidebar">
@@ -10295,7 +10295,7 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210713014643577" list="Home" modified="20210713014709731" title="$:/StoryList">
+<div created="20210713014643577" list="Home [[Be careful while using for...in to iterate over an Array]]" modified="20210713015122059" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711140657557" modified="20210711140657557" title="$:/theme">
@@ -10750,10 +10750,56 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210710142222740" modified="20210710142222740" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20210712151854231" modified="20210712152006564" tags="Home" title="Be careful while using for...in to iterate over an Array">
+<div created="20210712151854231" modified="20210713024657605" tags="Home" title="Be careful while using for...in to iterate over an Array">
 <pre>From [[MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in]]
 
-&gt; The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.</pre>
+&gt; The for...in statement iterates over all enumerable properties of an object ..., including inherited enumerable properties.
+
+Also from [[MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in]]
+
+&gt; Array indexes are just enumerable properties with integer names and are otherwise identical to general object properties. There is no guarantee that for...in will return the indexes in any particular order. The for...in loop statement will return all enumerable properties, including those with non–integer names and those that are inherited.
+
+!!! Example
+```javascript
+var a = [&quot;foo&quot;, &quot;bar&quot;];
+
+// Add an arbitrary function to the prototype chain
+Array.prototype.testFn = function() {
+  return false
+};
+
+for (var prop in a) {
+  console.log(prop);
+}
+```
+Prints: 
+
+&gt; 0 
+&gt; 1 
+&gt; testFn    &amp;nbsp; &lt;--- this is a problem
+
+If you must use for...in, you can add a guard condition using `hasOwnProperty` to prevent prototype chain traversal and only read the array's indices
+
+```javascript
+for (var prop in a) {
+  if (a.hasOwnProperty(prop)) {
+    console.log(prop);
+  }
+}
+```
+Prints: 
+
+&gt; 0 
+&gt; 1 
+
+
+
+
+To sum it up, for...in is not recommended to iterate over an array because:
+
+* it traverses over the object prototype chain also in addition to the indices.
+* it is slower because of the above point.
+* it is not guaranteed to be iterated in the order of array indices.</pre>
 </div>
 <div created="20210711124338779" modified="20210711130716261" tags="Home ES6" title="Calculate total amount using map() &amp; reduce()">
 <pre>```javascript
