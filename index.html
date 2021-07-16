@@ -241,6 +241,8 @@ Error message and password prompt
 
 <li>Parse CSS Text in JavaScript</li>
 
+<li>querySelector vs getElementById</li>
+
 <li>Reduce if/else blocks in Javascript</li>
 
 <li>Remove a property from an object using destructuring</li>
@@ -10265,13 +10267,13 @@ storyview=&quot;pop&quot;/&gt;
 <div created="20210711150750542" modified="20210711150751184" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20210711140720392" modified="20210713025112944" title="$:/state/notebook-sidebar">
+<div created="20210711140720392" modified="20210714014136909" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
-<div created="20210711140722135" modified="20210713025110754" title="$:/state/notebook-sidebar-section">
+<div created="20210711140722135" modified="20210714013438093" title="$:/state/notebook-sidebar-section">
 <pre></pre>
 </div>
-<div created="20210710132402566" modified="20210713021539731" title="$:/state/showeditpreview">
+<div created="20210710132402566" modified="20210716070605952" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210710133211564" modified="20210711124919222" title="$:/state/sidebar">
@@ -10295,7 +10297,7 @@ storyview=&quot;pop&quot;/&gt;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210713014643577" list="Home" modified="20210713025053372" title="$:/StoryList">
+<div created="20210716070041871" list="Home [[querySelector vs getElementById]]" modified="20210716070041871" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711140657557" modified="20210711140657557" title="$:/theme">
@@ -10927,6 +10929,20 @@ console.log(&quot;Font Size: &quot;, cssRules[0].style.fontSize);
 ```
 
 Reference: [[Stackoverflow|https://stackoverflow.com/a/14865690]]</pre>
+</div>
+<div created="20210714014509537" modified="20210716070750098" tags="Home" title="querySelector vs getElementById">
+<pre>document.`querySelector` takes one or more [[CSS selector|https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors]] (as a string) and returns the first element matching the selector. document.`getElementById` takes an `id` of an element and 
+returns the element.
+
+`querySelector` is more flexible as it accepts a CSS selector (eg. Id, className, or any other complex CSS selector like //&quot;div.user-panel.main input[name='login']&quot;//) as compared to `getElementById` that only accepts element id. 
+
+Both return //null// if no matching element is found.
+
+Both are supported in all modern browsers including IE9. So browser incompatibility is not a concern.
+
+//querySelectorAll//, a variant of //querySelector// returns a [[nodeList|https://developer.mozilla.org/en-US/docs/Web/API/NodeList]] of all elements matching the selector instead of returning only the first matching element.
+
+Reference: MDN [[querySelector|https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector]], [[getElementById|https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById]]</pre>
 </div>
 <div created="20210712140536912" modified="20210712141225064" tags="Home" title="Reduce if/else blocks in Javascript">
 <pre>```javascript
